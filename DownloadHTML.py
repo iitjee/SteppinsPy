@@ -16,8 +16,8 @@ import requests
 
 
 url = "http://www.engineering.careers360.com/colleges/list-of-engineering-colleges-in-India?page="
-webContent = requests.get(url)  #you get in bytes
-htmlContent = str(webContent.content, "utf-8")  #should convert to string for file ha
+r = requests.get(url)  #you get as response object;  see type(r)
+htmlContent = str(r.content, "utf-8")  #r.convert is in bytes; should convert to string for file handling
 
 
 	f = open('myDownloadedPage.html', 'w')  #Open file for writing
